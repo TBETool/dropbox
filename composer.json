@@ -1,0 +1,22 @@
+{
+    "name": "tbetool/dropbox",
+    "type": "library",
+    "description": "Based on Dropbox PHP SDK. Enables using upload and download to Dropbox.",
+    "keywords": ["dropbox", "dropbox-php-sdk", "dropbox-sdk-php", "dropbox-php-service", "the born engineer", "Anuj Sharma", "TBE", "Anuj TBE"],
+    "homepage": "http://anujsh.in",
+    "authors": [
+        {
+            "name": "Anuj Sharma",
+            "email": "contact@anujsh.in",
+            "homepage": "https://anujsh.in",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "kunalvarma05/dropbox-php-sdk": "v0.2.1"
+    },
+    "autoload": {
+        "psr-4": {"TBETool\\": "src/"}
+    }
+}
