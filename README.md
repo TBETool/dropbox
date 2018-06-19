@@ -1,6 +1,11 @@
 # Dropbox upload
 Upload to dropbox
 
+### Install
+```
+composer require tbetool/dropbox-php
+```
+
 ### Initialize
 ```
 $dropbox = new Dropbox($access_token);
