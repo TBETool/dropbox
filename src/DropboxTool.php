@@ -15,7 +15,7 @@ use Kunnu\Dropbox\DropboxApp;
 use Kunnu\Dropbox\DropboxFile;
 use Kunnu\Dropbox\Exceptions\DropboxClientException;
 
-class Dropbox
+class DropboxTool
 {
     private $access_token;
     private $client_key;
