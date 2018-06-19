@@ -18,13 +18,17 @@ use Kunnu\Dropbox\Exceptions\DropboxClientException;
 class Dropbox
 {
     private $access_token;
+    private $client_key;
+    private $client_secret;
 
     /**
      * DropboxUpload constructor.
      * @param $access_token
      */
-    function __construct($access_token)
+    function __construct($client_key, $client_secret, $access_token)
     {
+        $this->client_key = $client_key;
+        $this->client_secret = $client_secret;
         $this->access_token = $access_token;
     }
 
@@ -46,7 +50,7 @@ class Dropbox
             throw new Exception('File does not exists');
         }
 
-        $app = new DropboxApp(DROPBOX_APP_KEY, DROPBOX_APP_SECRET, $this->access_token);
+        $app = new DropboxApp($this->client_key, $this->client_secret, $this->access_token);
 
         $dropbox = new Dropbox($app);
 
@@ -66,5 +70,16 @@ class Dropbox
         }
 
         return false;
+    }
+    
+    public function listFolder($folder_path = '/')
+    {
+        $app = new DropboxApp($this->client_key, $this->client_secret, $this->access_token);
+
+        $dropbox = new Dropbox($app);
+
+        $folderContent = $dropbox->listFolder($folder_path);
+        
+        return $folderContent;
     }
 }
