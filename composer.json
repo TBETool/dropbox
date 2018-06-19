@@ -1,5 +1,5 @@
 {
-    "name": "tbetool/dropbox",
+    "name": "tbetool/dropbox-php",
     "type": "library",
     "description": "Based on Dropbox PHP SDK. Enables using upload and download to Dropbox.",
     "keywords": ["dropbox", "dropbox-php-sdk", "dropbox-sdk-php", "dropbox-php-service", "the born engineer", "Anuj Sharma", "TBE", "Anuj TBE"],
