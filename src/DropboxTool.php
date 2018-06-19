@@ -341,4 +341,34 @@ class DropboxTool
 
         return $file->getData();
     }
+
+    /**
+     * download file to specified path
+     * 
+     * @param $file_path
+     * @param $save_to
+     * @return array
+     * @throws Exception
+     */
+    public function download($file_path, $save_to)
+    {
+        if (empty($file_path))
+            throw new Exception('file_path is empty');
+
+        if (empty($save_to))
+            throw new Exception('save_to is empty. Provide path to download file to');
+
+
+        $app = new DropboxApp($this->client_key, $this->client_secret, $this->access_token);
+
+        $dropbox = new Dropbox($app);
+
+        try {
+            $file = $dropbox->download($file_path, $save_to);
+        } catch (DropboxClientException $exception) {
+            throw new Exception($exception->getMessage());
+        }
+
+        return $file->getMetadata()->getData();
+    }
 }
