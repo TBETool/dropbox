@@ -185,3 +185,28 @@ Response:
 	'link' => 'https://dl.dropboxusercontent.com/apitl/1/...'
 ]
 ```
+
+
+### download file
+download file to specified path
+```
+$dropbox->download('/file paht', $save_to);
+```
+**save_to** is the local path of the file to save it.
+
+Example: `$dropbox->download('/file.zip', '/path/to/file.zip');`
+
+Response: Downloaded file information
+```
+[
+	'name' => 'PHP_QR_Code_Generate.zip',
+	'path_lower' => '/php_qr_code_generate.zip',
+	'path_display' => '/PHP_QR_Code_Generate.zip',
+	'id' => 'id:wDFg96ot7lwAAAAAAAAACg',
+	'client_modified' => '2016-02-20T17:59:59Z',
+	'server_modified' => '2016-02-20T17:59:59Z',
+	'rev' => '91f916734',
+	'size' => (int) 218245,
+	'content_hash' => '5e838e8a2dfa077c732e2aa95b2dbd2c0b549a96b728af36db84c5d17c899895'
+]
+```
